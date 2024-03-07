@@ -9,9 +9,9 @@ export type chatBotProps={
 const ChatBot =({search}:chatBotProps) => {
 
 
-    let [user,setUser]=useState<string>("User");
-    let [wait,setWait]=useState<boolean>(false);
-  let {name}=useContext(userContextApi);
+    const [user,setUser]=useState<string>("User");
+    const [wait,setWait]=useState<boolean>(false);
+    const {name}=useContext(userContextApi);
   
 
     useEffect(()=>{

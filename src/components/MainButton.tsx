@@ -12,16 +12,16 @@ import { useNavigate } from "react-router-dom";
 
 
 const MainButton = ({search}:chatBotProps) => {
-  let navigate=useNavigate();
+  const navigate=useNavigate();
    
-    let initalQuestions=["Purpose FireFlink","Features","Know More...","exit"];
-    let [ans,setAns]=useState<string|null>(null);
-    let [res,setResp]=useState<string|React.ReactNode>("");
-    let{setUser}=useMyContext();
+    const initalQuestions=["Purpose FireFlink","Features","Know More","exit"];
+    const [ans,setAns]=useState<string|null>(null);
+    const [res,setResp]=useState<string|React.ReactNode>("");
+    const {setUser}=useMyContext();
     console.log(search);
-    let handleClick = (val: string|null) => {
+    const handleClick = (val: string|null) => {
      
-       let newVal=val?.toLowerCase();
+      const newVal=val?.toLowerCase();
          switch (newVal) {
           
           case "purpose fireflink": {
@@ -36,7 +36,7 @@ const MainButton = ({search}:chatBotProps) => {
               },2000);
             return setAns(val);
           }
-          case "know more...": {
+          case "know more": {
             
             console.log(val);
             setTimeout(()=>{
@@ -44,12 +44,20 @@ const MainButton = ({search}:chatBotProps) => {
             },2000);
             return setAns(val);
           }
-          case "exit":{
-            setResp(<Thankyou/>)
-            setUser(false)
-           setTimeout(()=>{ navigate('/')},3000)  
-            return setAns(val);
-            
+          case "exit": {
+            if (confirm("Are You Really Want To Exit")) {
+              setResp(<Thankyou />);
+              setUser(false);
+              setTimeout(() => {
+                navigate("/");
+              }, 1000);
+              return setAns(val);
+            } else {
+              setTimeout(() => {
+                setResp(<MainButton search={null} />);
+              });
+              return setAns("Main Menu");
+            }
           }
           default: {
             if(newVal!=="products"&&newVal!=="contact us"&&newVal!=="resourses"){

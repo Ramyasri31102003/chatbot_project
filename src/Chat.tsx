@@ -12,22 +12,22 @@ export type MyContextType={
 };
 export const contextApi=createContext<MyContextType|null>(null);
 const MyComponent: React.FC = () => {
-  let [state,setState]=useState<string>("");
-  let [values_1,setValues_1]=useState<null|string>(null);
-  let[user,setUser]=useState<boolean>(true);
+  const [state,setState]=useState<string>("");
+  const [values_1,setValues_1]=useState<null|string>(null);
+  const[user,setUser]=useState<boolean>(true);
 
-  let handleChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
+  const handleChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
     // let {name,value}=e.target;
     setState(e.target.value);
     console.log(state);
   }
   
-  let handleClick=()=>{
+  const handleClick=()=>{
       setValues_1(state);
       setState("");
  }
 
- let KeyEnter=(e:React.KeyboardEvent<HTMLInputElement>)=>{
+ const KeyEnter=(e:React.KeyboardEvent<HTMLInputElement>)=>{
   if(e.key==="Enter"){
     setValues_1(state);
     setState("");
@@ -70,7 +70,7 @@ const MyComponent: React.FC = () => {
 export default   MyComponent;
 
 export  const useMyContext=()=>{
-  let context=useContext(contextApi);
+  const context=useContext(contextApi);
   if(!context){
     throw new Error("your context is not working")
   }

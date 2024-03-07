@@ -76,6 +76,20 @@
       "lastName": "palacholla",
       "email": "suma@gmail.com",
       "password": "suma@123"
+    },
+    {
+      "id": "fc18",
+      "firstName": "Khusboo",
+      "lastName": "Kumari",
+      "email": "khusbookumari0406@gmail.com",
+      "password": "Khusboo123"
+    },
+    {
+      "id": "e975",
+      "firstName": "Khusboo",
+      "lastName": "Kumari",
+      "email": "khusbookumari0406@gmail.com",
+      "password": "Khusboo123"
     }
   ]
 }

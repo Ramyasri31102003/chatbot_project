@@ -1,7 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import MyComponent from './Chat';
 import GetStarted from './components/getstarted/GetStarted';
-import Layout from './components/Layout';
+// import Layout from './components/Layout';
 import MainPage from './components/MainPage/MainPage';
 import LandingPage from './LandingPae';
 import SignIn from './components/sign-in/SignIn';
@@ -30,22 +30,8 @@ const router=createBrowserRouter([
     path:'/chatbot',
     element:<MyComponent/>
   }
-  // {
-  //   path:'/home',
-  //   element:<Layout/>,
-  //   children:[{
-  //     path:"/home/MainPage",
-  //     element:<MainPage/>
-  //   },{
-  //     path:'/home/GetStarted',
-  //     element:<GetStarted/>
-  //   },
-  //   {
-  //     path:'/home/chatbot',
-  //     element:<MyComponent/>
-  //   }]
-  // }
-  
+ 
+
 ])
 const App = () => {
  
